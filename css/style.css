@@ -1313,6 +1313,9 @@ header.site-header {
 header.site-header.opaque {
   background: #262626;
 }
+header.site-header.opaque nav a {
+  background: #262626;
+}
 header.site-header .logo {
   text-align: center;
   width: 100%;
@@ -1360,22 +1363,25 @@ header.site-header nav .menu-toggle:hover, header.site-header nav .menu-toggle:a
 }
 header.site-header nav ul {
   position: absolute;
-  left: -9999px;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid #fff;
   border-radius: 4px;
   box-sizing: border-box;
-  top: 200%;
   transition: 0.3s top;
 }
-header.site-header nav ul.active {
+header.site-header nav ul:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+header.site-header nav ul.active li {
+  top: 0;
+  opacity: 1;
   left: auto;
-  top: 100%;
 }
 @media all and (min-width: 961px) {
   header.site-header nav ul {
@@ -1383,6 +1389,34 @@ header.site-header nav ul.active {
     flex-direction: row;
     left: auto;
     border: none;
+  }
+}
+header.site-header nav ul li {
+  position: relative;
+  top: 100px;
+  left: -9999px;
+  transition: all ease 0.4s;
+  opacity: 0.1;
+}
+header.site-header nav ul li:last-child a {
+  border-radius: 0 0 4px 4px;
+}
+header.site-header nav ul li.delay-0 {
+  transition-delay: -0.1s;
+}
+header.site-header nav ul li.delay-1 {
+  transition-delay: 0s;
+}
+header.site-header nav ul li.delay-2 {
+  transition-delay: 0.1s;
+}
+header.site-header nav ul li.delay-3 {
+  transition-delay: 0.2s;
+}
+@media screen and (min-width: 961px) {
+  header.site-header nav ul li {
+    position: static;
+    opacity: 1;
   }
 }
 header.site-header nav ul li a {

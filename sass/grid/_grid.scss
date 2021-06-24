@@ -1,8 +1,10 @@
+@use 'sass:math';
+
 @mixin make-grid($n-columns, $full-width-column, $size){
     @for $i from 0 through $n-columns{
 
         @if $i <= $full-width-column{
-            $col-width: 100% / $full-width-column;
+            $col-width: math.div(100%, $full-width-column);
 
             .col-#{$size}-#{$i}{
                 display: inline-block;
@@ -32,7 +34,7 @@
 @mixin make-margin-left($size, $n-columns ){
     @for $i from 0 through $n-columns{
         .ml-#{$size}-#{$i}{
-            margin-left: $i * (100% / $n-columns)
+            margin-left: $i * math.div(100%, $n-columns);
         }
     }
 }

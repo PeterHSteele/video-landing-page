@@ -5,8 +5,18 @@ header.site-header{
   transition: background .2s;
   padding: 10px 0;
 
+  .row{
+    *{
+      //vertical-align: top!important;
+    }
+  }
+
   &.opaque{
     background: #262626;
+
+    nav a{
+      background: #262626;
+    }
   }
   
   .logo{
@@ -61,22 +71,31 @@ header.site-header{
     
     ul{
       position: absolute;
-      left: -9999px;
+      //left: -9999px;
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       width: 100%;
-      border: 1px solid #fff;
       border-radius: 4px;
       box-sizing: border-box;
-      top: 200%;
       transition: .3s top;
 
+      //delete this
+      &:after{
+        display: table;
+        content: "";
+        clear: both;
+      }
+
       &.active{
-        left: auto;
-        top: 100%;
+        
+        li{
+          top: 0;
+          opacity: 1;
+          left: auto;
+        }
       }
 
       @media all and (min-width: $large-screen-width){
@@ -87,6 +106,22 @@ header.site-header{
       }
 
       li{
+        position: relative;
+        top: 100px;
+        left: -9999px;
+        transition: all ease .4s;
+        opacity: .1;
+
+        &:last-child a{
+          border-radius: 0 0 4px 4px;
+        }
+
+        @include delay('&');
+
+        @media screen and (min-width: $large-screen-width){
+          position: static;
+          opacity: 1;
+        }
         
         a{
           $hover-color: #ccddff;
@@ -104,14 +139,13 @@ header.site-header{
             background: #fff;
             color: #262626;
           }
-          
           /*
           background: #fff;
           color: #262626;*/
 
           @media screen and (min-width: $large-screen-width){
             background: transparent;
-            color: #fff
+            color: #fff;
           }
 
           @media screen and (min-width: $large-screen-width){

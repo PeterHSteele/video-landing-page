@@ -2,7 +2,19 @@ $xl-screen-width: 1170px;
 $large-screen-width: 961px;
 $medium-screen-width: 769px;
 
+@use "sass:math";
+
 @mixin position-static-on-top($index){
   position: relative;
   z-index: $index;
+}
+
+@mixin delay($selector){
+  @for $i from 0 through 3{
+    $delay: math.div($i, 10) - .1s;
+
+    #{$selector}.delay-#{$i}{
+      transition-delay: $delay;
+    }
+  }
 }
