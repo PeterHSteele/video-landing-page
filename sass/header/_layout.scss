@@ -1,0 +1,160 @@
+header.site-header{
+  @include position-static-on-top(2);
+  position: fixed;
+  z-index: 2;
+  transition: background .2s;
+  padding: 10px 0;
+
+  &.opaque{
+    background: #262626;
+  }
+  
+  .logo{
+    text-align: center;
+    width: 100%;
+  }
+
+  .logo-image{
+    height: 75px;
+
+    @media all and (min-width: $medium-screen-width){
+      height: 100px;
+    }
+  }
+
+  h2{
+    color: #fff;
+    font-family: "Brush Script MT", cursive;
+    display: none;
+    margin: 8px 0;
+
+    @media all and (min-width: $large-screen-width){
+      display: block
+    }
+  }
+
+  nav{
+    position: relative;
+
+    .menu-toggle{
+      background: transparent;
+      padding: 6px;
+      color: #fff;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      font: 22px "Brush Script MT", cursive;
+      display: block;
+      transition: all .3s;
+
+      &:hover,
+      &:active{
+        background: #ccddff;
+        color: #262626;
+      }
+    }
+
+    @media all and (min-width: $large-screen-width){
+      .menu-toggle{
+        display: none;
+      }
+    }
+    
+    ul{
+      position: absolute;
+      left: -9999px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      box-sizing: border-box;
+      top: 200%;
+      transition: .3s top;
+
+      &.active{
+        left: auto;
+        top: 100%;
+      }
+
+      @media all and (min-width: $large-screen-width){
+        position: static;
+        flex-direction: row;
+        left: auto;
+        border: none;
+      }
+
+      li{
+        
+        a{
+          $hover-color: #ccddff;
+
+          color: #fff;
+          padding: .5em;
+          text-decoration: none;
+          font-size: 16px;
+          transition: all .3s;
+          position: relative;
+          display: block;
+
+          &:hover,
+          &:focus{
+            background: #fff;
+            color: #262626;
+          }
+          
+          /*
+          background: #fff;
+          color: #262626;*/
+
+          @media screen and (min-width: $large-screen-width){
+            background: transparent;
+            color: #fff
+          }
+
+          @media screen and (min-width: $large-screen-width){
+            &:hover,
+            &:focus{
+              background: transparent;
+              color: $hover-color;
+            }
+
+            &:after{
+              position: absolute;
+              content: '';
+              width: 0;
+              height: 2px;
+              left: 0;
+              bottom: 0;
+              background: $hover-color;
+              //transform-origin: 50% 0;
+              left: 50%;
+              transition: all .3s;
+              ;
+            }
+  
+            &:hover:after{
+              //transform-origin: 0 0;
+              left: 0;
+              width: 100%;
+            }
+          }
+        }
+        @media all and (min-width: $large-screen-width){
+          &:first-child a{
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+}
+/*
+html:not([data-scroll='0']){
+  header{
+      background: #262626;
+  }
+}
+*/

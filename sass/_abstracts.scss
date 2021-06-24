@@ -1,0 +1,8 @@
+$xl-screen-width: 1170px;
+$large-screen-width: 961px;
+$medium-screen-width: 769px;
+
+@mixin position-static-on-top($index){
+  position: relative;
+  z-index: $index;
+}

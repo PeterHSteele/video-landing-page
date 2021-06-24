@@ -1,0 +1,13 @@
+.hide-s{
+  display: none;
+
+  @media screen and (min-width: $medium-screen-width){
+    display: block;
+  }
+}
+
+.hide-mlx{
+  @media screen and (min-width: $medium-screen-width){
+    display: none;
+  }
+}

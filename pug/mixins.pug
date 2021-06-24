@@ -1,0 +1,17 @@
+mixin logo-link
+  .logo
+    a.logo-link(href="./index.html")
+      img.logo-image(src="../img/test-doodle.svg")
+
+//mixin content-section(number,heading,imgsrc,imgalt,text,linkref,linktext,imgleft)
+  #section${number}.col-sm-16
+    article
+      .col-sm-16.col-md-8
+        img.col-sm-16(src="#{imgsrc}", alt="sea coast")
+      .col-sm-16.col-md-8
+        .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
+          header
+            h2 #{heading}
+          .entry-content
+            p 
+            a.cta-link(href="#{linkref}") #{linktext}

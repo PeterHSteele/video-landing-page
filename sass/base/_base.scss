@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    font: 16px Trebuchet, sans-serif;
+}
+
+img{
+    max-width: 100%;
+}
+
+.sr-only{
+    position: absolute;
+    left: -9999px;
+    word-wrap: normal!important;
+}
+
+a{
+    color: rgb(57,50,222)
+}

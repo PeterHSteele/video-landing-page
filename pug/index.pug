@@ -1,0 +1,126 @@
+doctype html
+include mixins
+html
+  head
+    title Sample Business
+    meta(charset='utf-8')
+    link(rel="stylesheet",href="../css/style.css")
+  body
+    header.site-header.col-sm-16
+      .row
+        .ml-xl-1.col-sm-5.col-md-3.ml-md-2.col-xl-4
+          h2 For Students
+          nav#primary-nav.secondary-nav.internal-nav.col-sm-15.ml-sm-1.col-lg-16.ml-lg-0(aria-label="For Students")
+            ul
+              li 
+                a(href='#') Menu Item #1
+              li 
+                a(href='#') Menu Item #2
+              li 
+                a(href='#') Menu Item #3
+            button.menu-toggle.secondary.col-sm-16(aria-hidden=true) For Students
+        .col-xl-3.col-sm-0
+          +logo-link
+        .col-sm-5.col-md-3.col-xl-7.ml-xl-1
+          h2 For Visitors
+          nav#secondary-nav.main-nav.external-nav.col-sm-15.ml-sm-1.col-lg-16.ml-lg-0(aria-label="For Visitors")
+            ul 
+              li 
+                a(href='#') Menu Item #1
+              li 
+                a(href='#') Menu Item #2
+              li 
+                a(href='#') Menu Item #3
+              li 
+                a(href='#') Menu Item #4
+            button.menu-toggle.primary.col-sm-16(aria-hidden=true) For Visitors
+        .col-lg-0.col-sm-6.col-md-4.ml-md-2.ml-lg-0
+          +logo-link
+    main.site-main
+      #section1
+        .col-sm-16.video-background
+          .mask
+          video#video-bg(src='../../../../../desktop/satriales2.mp4', autoplay=true, muted=true, loop=true)
+        .col-sm-16
+          main.site-main 
+            .col-sm-16
+              .col-sm-14.ml-sm-1
+                .mission
+                  h1.sr-only Sample Business
+                  p.tagline Tagline for the Sample Business. Catchy and direct.
+                  .circle
+                    a.go-down.aria-hidden(href="#section2") &or;
+      #section2.content-section.col-sm-16
+        article
+          .col-sm-16.col-md-8
+            img.col-sm-16(src="../img/sea-coast-silhouette.jpg", alt="sea coast")
+          .col-sm-16.col-md-8
+            .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
+              header
+                h2 Academics
+              .entry-content
+                p Our world-renowned academic program is rigorous and prepares students for a lifetime of professional success and service to their communities.
+                a.cta-link(href="#") Learn More
+                  span &rarr;
+      #section3.content-section.col-sm-16.hide-mlx
+        article
+          .col-sm-16.col-md-8
+            img.col-sm-16(src="../img/mixer.jpg", alt="drinks")
+          .col-sm-16.col-md-8
+            .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
+              header
+                h2 Drinks
+              .entry-content
+                p Try our seasonally changing cocktail menu. For Summer, we've got lots of citrus and an award winning margarita. You can have it made in your mouth.
+                a.cta-link(href="#") View Menu
+                  span &rarr;
+      #section3.content-section.col-sm-16.hide-s
+        article
+          .col-sm-16.col-md-8
+            .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
+              header
+                h2 Drinks
+              .entry-content
+                p Try our seasonally changing cocktail menu. For Summer, we've got lots of citrus and an award winning margarita. You can have it made in your mouth.
+                a.cta-link(href="#") View Menu
+                  span &rarr;
+          .col-sm-16.col-md-8
+            img.col-sm-16(src="../img/mixer.jpg", alt="drinks")
+      #section4.content-section.col-sm-16
+        article
+          .col-sm-16.col-md-8
+            img.col-sm-16(src="../img/coffeebeans.jpg", alt="sea coast")
+          .col-sm-16.col-md-8
+            .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
+              header
+                h2 Breakfast
+              .entry-content
+                p Fuel up for your day with a complementary continental breakfast. Exercise in our state of the art workout facility. Relax at the end of a long day.
+                a.cta-link(href="#") See Pictures
+                  span &rarr;
+      #section4.related-content.stretch-height
+        .col-sm-16.stretch-height-center-area
+          .section-content.col-sm-16
+            h2.col-sm-14.ml-sm-1.col-md-12.ml-md-2.ml-lg-1 Newsworthy
+            .col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-4.ml-lg-1.va-baseline
+              article.card
+                img(src="../img/workspace.jpg", alt="work space")
+                .mask
+                  h3 Secondary Content #1 Title
+                //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site.
+            .col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-4.ml-lg-1.va-baseline
+              article.card
+                img(src="../img/sandy.jpg", alt="work space")
+                .mask
+                  h3 Secondary Content #2 Title
+                //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site. Let's make this content longer and see what happens to the blocks on either side of it.     
+            .col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-4.ml-lg-1.va-baseline
+              article.card
+                img(src="../img/landscape-grass-horizon.jpg", alt="work space")
+                .mask
+                  h3 Secondary Content #3 Title
+                //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site.    
+            .col-sm-16.view-more-wrap 
+              a.view-more(href="#") More News
+    div#headerPixel
+    script(src="../js/main.js")

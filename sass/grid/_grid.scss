@@ -1,0 +1,102 @@
+@mixin make-grid($n-columns, $full-width-column, $size){
+    @for $i from 0 through $n-columns{
+
+        @if $i <= $full-width-column{
+            $col-width: 100% / $full-width-column;
+
+            .col-#{$size}-#{$i}{
+                display: inline-block;
+                vertical-align: middle;
+                width: $i * $col-width;
+            } 
+            /*
+            .ml-#{$size}-#{$i}{
+                margin-left: $i * ( 100% / $full-width-column );
+            }
+            */
+         } @else {
+            .col-#{$size}-#{$i}{
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+            }
+            /*
+            .ml-#{$size}-#{$i}{
+                margin-left: 0;
+            }
+            */
+         }
+    }
+}
+
+@mixin make-margin-left($size, $n-columns ){
+    @for $i from 0 through $n-columns{
+        .ml-#{$size}-#{$i}{
+            margin-left: $i * (100% / $n-columns)
+        }
+    }
+}
+
+/* Small Screen */
+@include make-grid(16,4,'xl');
+@include make-grid(16,16,'sm');
+@include make-margin-left('sm', 16);
+
+/* Medium Screen */
+@media all and (min-width: 769px){
+    @include make-grid(16,16,'md');
+    @include make-margin-left('md', 16)
+}
+
+/*Large Screen*/
+@media all and (min-width: 961px){
+    @include make-grid(16,16,'lg');
+    @include make-margin-left('lg', 16)
+}
+
+/*Large Screen*/
+@media all and (min-width: 961px){
+    @include make-margin-left('xl', 16);
+    @include make-grid(16,16,'xl');
+}
+
+.stretch-height{
+    position: relative;
+    
+    @media all and (min-width: $large-screen-width){
+        height: 100vh;
+    }
+}
+
+.stretch-height-center-area{
+    position: absolute; 
+    height: 100%;
+    
+    &:before{
+        vertical-align: middle;
+        display: inline-block;
+        content: '';
+        height: 100%;
+    }
+}
+
+.va-middle{
+    vertical-align: middle;
+}
+
+.va-baseline{
+    vertical-align: baseline;
+    /*
+    @media all and (min-width: $medium-screen-width){
+        vertical-align: baseline;
+    }
+
+    @media all and (min-width: $large-screen-width){
+        vertical-align: baseline;
+    }
+
+    @media all and (min-width: $xl-screen-width){
+        vertical-align: baseline;
+    }
+    */
+}
