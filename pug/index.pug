@@ -1,11 +1,11 @@
 doctype html
 include mixins
-html
+html(lang="en-us")
   head
     title Sample Business
     meta(charset='utf-8')
-    link(rel="stylesheet",href="../css/style.css")
-    link(rel="stylesheet", href="../fontawesome/css/all.css")
+    link(rel="stylesheet",href="./css/style.css")
+    link(rel="stylesheet", href="./fontawesome/css/all.css")
   body
     header.site-header.col-sm-16
       .row
@@ -41,7 +41,7 @@ html
       #section1
         .col-sm-16.video-background
           .mask
-          video#video-bg(src='../img/waves.mp4', autoplay=true, muted=true, loop=true)
+          video#video-bg(src='./img/waves.mp4', autoplay=true, muted=true, loop=true)
         .col-sm-16
           main.site-main 
             .col-sm-16
@@ -54,7 +54,7 @@ html
       #section2.content-section.col-sm-16
         article
           .col-sm-16.col-md-8
-            img.col-sm-16(src="../img/sea-coast-silhouette.jpg", alt="sea coast")
+            img.col-sm-16(src="./img/sea-coast-silhouette.jpg", alt="sea coast")
           .col-sm-16.col-md-8
             .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
               header
@@ -66,7 +66,7 @@ html
       #section3.content-section.col-sm-16.hide-mlx
         article
           .col-sm-16.col-md-8
-            img.col-sm-16(src="../img/mixer.jpg", alt="drinks")
+            img.col-sm-16(src="./img/mixer.jpg", alt="drinks")
           .col-sm-16.col-md-8
             .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
               header
@@ -86,11 +86,11 @@ html
                 a.cta-link(href="#") View Menu
                   span &rarr;
           .col-sm-16.col-md-8
-            img.col-sm-16(src="../img/mixer.jpg", alt="drinks")
+            img.col-sm-16(src="./img/mixer.jpg", alt="drinks")
       #section4.content-section.col-sm-16
         article
           .col-sm-16.col-md-8
-            img.col-sm-16(src="../img/coffeebeans.jpg", alt="sea coast")
+            img.col-sm-16(src="./img/coffeebeans.jpg", alt="sea coast")
           .col-sm-16.col-md-8
             .col-sm-14.ml-sm-1.col-lg-10.ml-lg-3
               header
@@ -105,29 +105,26 @@ html
             h2.col-sm-14.ml-sm-1.col-md-12.ml-md-2.ml-lg-1 Newsworthy
             .col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-4.ml-lg-1.va-baseline
               article.card
-                img(src="../img/workspace.jpg", alt="work space")
+                img(src="./img/workspace.jpg", alt="work space")
                 .mask
                   h3 Secondary Content #1 Title
-                //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site.
             .col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-4.ml-lg-1.va-baseline
               article.card
-                img(src="../img/sandy.jpg", alt="work space")
+                img(src="./img/sandy.jpg", alt="work space")
                 .mask
-                  h3 Secondary Content #2 Title
-                //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site. Let's make this content longer and see what happens to the blocks on either side of it.     
+                  h3 Secondary Content #2 Title     
             .col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-4.ml-lg-1.va-baseline
               article.card
-                img(src="../img/landscape-grass-horizon.jpg", alt="work space")
+                img(src="./img/landscape-grass-horizon.jpg", alt="work space")
                 .mask
                   h3 Secondary Content #3 Title
-                //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site.    
             .col-sm-16.view-more-wrap 
               a.view-more(href="#") More News
     footer.site-footer
       .mask
       .information.col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-8.ml-lg-4
         .branding
-          img.logo(src="../img/test-doodle.svg", alt="logo")
+          img.logo(src="./img/test-doodle.svg", alt="logo")
           h2 Acme Corporation, Ltd.
           p.description A landing page layout created with pug.
         .contact
