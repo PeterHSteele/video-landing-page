@@ -15,6 +15,7 @@
     img{
       display: block;
       height: 350px;
+      width: 100%;
       object-fit: cover;
     }
 
@@ -59,7 +60,7 @@
 
   .view-more-wrap{
     text-align: center;
-    padding-top: 75px;
+    padding: 55px 0 35px;
 
     a.view-more{
       padding: .75rem;

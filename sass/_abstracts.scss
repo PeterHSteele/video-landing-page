@@ -10,7 +10,7 @@ $medium-screen-width: 769px;
 }
 
 @mixin delay($selector){
-  @for $i from 0 through 3{
+  @for $i from 0 through 4{
     $delay: math.div($i, 10) - .1s;
 
     #{$selector}.delay-#{$i}{

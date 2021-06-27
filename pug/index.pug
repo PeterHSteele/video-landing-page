@@ -5,14 +5,15 @@ html
     title Sample Business
     meta(charset='utf-8')
     link(rel="stylesheet",href="../css/style.css")
+    link(rel="stylesheet", href="../fontawesome/css/all.css")
   body
     header.site-header.col-sm-16
       .row
         .ml-xl-1.col-sm-5.col-md-3.ml-md-2.col-xl-4
           h2 For Students
-          nav#primary-nav.secondary-nav.internal-nav.col-sm-15.ml-sm-1.col-lg-16.ml-lg-0(aria-label="For Students")
-            button.menu-toggle.secondary.col-sm-16(aria-hidden=true) For Students
-            ul
+          nav#primary-nav.secondary-nav.internal-nav.col-sm-16.col-lg-16.ml-lg-0(aria-label="For Students")
+            button.menu-toggle.secondary.col-sm-15.ml-sm-1(aria-hidden=true) For Students &#9660;
+            ul.hidden
               li.delay-1 
                 a(href='#') Menu Item #1
               li.delay-2
@@ -22,16 +23,16 @@ html
         .col-xl-3.col-sm-0
           +logo-link
         .col-sm-5.col-md-3.col-xl-7.ml-xl-1
-          h2 For Visitors
+          h2 For Visitors 
           nav#secondary-nav.main-nav.external-nav.col-sm-15.ml-sm-1.col-lg-16.ml-lg-0(aria-label="For Visitors")
-            button.menu-toggle.primary.col-sm-16(aria-hidden=true) For Visitors
-            ul 
+            button.menu-toggle.primary.col-sm-15.ml-sm-1(aria-hidden=true) For Visitors &#9660;
+            ul.hidden 
               li.delay-1 
                 a(href='#') Menu Item #1
               li.delay-2
                 a(href='#') Menu Item #2
               li.delay-3
-                a(href='#') Menu Item #3
+                a(href='#') Longer Menu Item For Testing Purposes
               li.delay-4 
                 a(href='#') Menu Item #4
         .col-lg-0.col-sm-6.col-md-4.ml-md-2.ml-lg-0
@@ -40,7 +41,7 @@ html
       #section1
         .col-sm-16.video-background
           .mask
-          video#video-bg(src='../../../../../desktop/satriales2.mp4', autoplay=true, muted=true, loop=true)
+          video#video-bg(src='../img/waves.mp4', autoplay=true, muted=true, loop=true)
         .col-sm-16
           main.site-main 
             .col-sm-16
@@ -122,5 +123,23 @@ html
                 //.entry-content This is some seconary content. Maybe a blog post, maybe a related news item, maybe a press release. Maybe a recipe or menu item. Either way, it's designed to catch readers' attention and get them to explore the rest of the site.    
             .col-sm-16.view-more-wrap 
               a.view-more(href="#") More News
-    div#headerPixel
+    footer.site-footer
+      .mask
+      .information.col-sm-14.ml-sm-1.col-md-12.ml-md-2.col-lg-8.ml-lg-4
+        .branding
+          img.logo(src="../img/test-doodle.svg", alt="logo")
+          h2 Acme Corporation, Ltd.
+          p.description A landing page layout created with pug.
+        .contact
+          p.address 1800 Example Boulevard &middot; Everytown USA 01234
+          p Phone: 123-356-7890
+          p Email: exampleorg@example.com
+        .social
+          a(href="#")
+            span.sr-only Our Facebook Page
+            i.fab.fa-facebook-f
+          +social-link('#', 'Twitter Page', 'fab fa-twitter')
+          +social-link('#', 'Youtube', 'fab fa-youtube')
+          +social-link('#', 'Instagram', 'fab fa-instagram')
+    #headerPixel      
     script(src="../js/main.js")

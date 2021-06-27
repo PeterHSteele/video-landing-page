@@ -1248,7 +1248,7 @@ Grid
 }
 
 .stretch-height-center-area {
-  position: absolute;
+  position: relative;
   height: 100%;
 }
 .stretch-height-center-area:before {
@@ -1309,12 +1309,15 @@ header.site-header {
   z-index: 2;
   transition: background 0.2s;
   padding: 10px 0;
-}
-header.site-header.opaque {
   background: #262626;
 }
-header.site-header.opaque nav a {
-  background: #262626;
+@media screen and (min-width: 961px) {
+  header.site-header:not(.opaque) {
+    background: transparent;
+  }
+  header.site-header:not(.opaque) nav a {
+    background: transparent;
+  }
 }
 header.site-header .logo {
   text-align: center;
@@ -1330,7 +1333,10 @@ header.site-header .logo-image {
 }
 header.site-header h2 {
   color: #fff;
-  font-family: "Brush Script MT", cursive;
+  font-size: 18px;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   display: none;
   margin: 8px 0;
 }
@@ -1339,22 +1345,30 @@ header.site-header h2 {
     display: block;
   }
 }
-header.site-header nav {
-  position: relative;
-}
 header.site-header nav .menu-toggle {
   background: transparent;
   padding: 6px;
   color: #fff;
   border: 1px solid #fff;
   border-radius: 4px;
-  font: 22px "Brush Script MT", cursive;
+  font-size: 15px;
+  text-transform: uppercase;
   display: block;
   transition: all 0.3s;
+  min-height: 65px;
+}
+header.site-header nav .menu-toggle.is-pressed {
+  color: #262626;
+  background: linear-gradient(to right, #fff, #cdf);
 }
 header.site-header nav .menu-toggle:hover, header.site-header nav .menu-toggle:active {
   background: #ccddff;
   color: #262626;
+}
+@media all and (min-width: 769px) {
+  header.site-header nav .menu-toggle {
+    font-size: 18px;
+  }
 }
 @media all and (min-width: 961px) {
   header.site-header nav .menu-toggle {
@@ -1362,6 +1376,7 @@ header.site-header nav .menu-toggle:hover, header.site-header nav .menu-toggle:a
   }
 }
 header.site-header nav ul {
+  top: 200%;
   position: absolute;
   list-style: none;
   margin: 0;
@@ -1371,17 +1386,17 @@ header.site-header nav ul {
   width: 100%;
   border-radius: 4px;
   box-sizing: border-box;
-  transition: 0.3s top;
+  transition: top 0.3s ease-out, opacity 0.3s ease-out;
+  left: 0;
+  opacity: 0.1;
 }
-header.site-header nav ul:after {
-  display: table;
-  content: "";
-  clear: both;
+header.site-header nav ul.hidden {
+  left: -9999px;
 }
-header.site-header nav ul.active li {
-  top: 0;
+header.site-header nav ul.active {
+  left: 0;
+  top: 100%;
   opacity: 1;
-  left: auto;
 }
 @media all and (min-width: 961px) {
   header.site-header nav ul {
@@ -1389,14 +1404,8 @@ header.site-header nav ul.active li {
     flex-direction: row;
     left: auto;
     border: none;
+    opacity: 1;
   }
-}
-header.site-header nav ul li {
-  position: relative;
-  top: 100px;
-  left: -9999px;
-  transition: all ease 0.4s;
-  opacity: 0.1;
 }
 header.site-header nav ul li:last-child a {
   border-radius: 0 0 4px 4px;
@@ -1413,6 +1422,9 @@ header.site-header nav ul li.delay-2 {
 header.site-header nav ul li.delay-3 {
   transition-delay: 0.2s;
 }
+header.site-header nav ul li.delay-4 {
+  transition-delay: 0.3s;
+}
 @media screen and (min-width: 961px) {
   header.site-header nav ul li {
     position: static;
@@ -1423,10 +1435,11 @@ header.site-header nav ul li a {
   color: #fff;
   padding: 0.5em;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.3em;
   transition: all 0.3s;
   position: relative;
   display: block;
+  background: #262626;
   /*
   background: #fff;
   color: #262626;*/
@@ -1437,6 +1450,7 @@ header.site-header nav ul li a:hover, header.site-header nav ul li a:focus {
 }
 @media screen and (min-width: 961px) {
   header.site-header nav ul li a {
+    font-size: 1em;
     background: transparent;
     color: #fff;
   }
@@ -1488,7 +1502,7 @@ Content
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.45);
 }
 .video-background video {
   width: 100%;
@@ -1625,6 +1639,7 @@ main #section2 {
 .related-content .card img {
   display: block;
   height: 350px;
+  width: 100%;
   object-fit: cover;
 }
 .related-content .card .mask {
@@ -1660,7 +1675,7 @@ main #section2 {
 }
 .related-content .view-more-wrap {
   text-align: center;
-  padding-top: 75px;
+  padding: 55px 0 35px;
 }
 .related-content .view-more-wrap a.view-more {
   padding: 0.75rem;
@@ -1680,6 +1695,61 @@ main #section2 {
   .related-content {
     height: 100vh;
   }
+}
+
+/* ==========================
+Site Footer
+=========================== */
+footer.site-footer {
+  background: url("../img/cafe-table-chair.jpg");
+  position: relative;
+  color: #fff;
+  box-sizing: border-box;
+  padding: 10em 0;
+}
+footer.site-footer .mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+footer.site-footer .information {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+footer.site-footer .information .branding {
+  margin-bottom: 2em;
+}
+footer.site-footer .information h2 {
+  margin: 0.67em;
+}
+footer.site-footer .information h2,
+footer.site-footer .information .description {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+footer.site-footer .information .logo {
+  height: 100px;
+}
+footer.site-footer .information .contact p {
+  margin: 0.5em 0;
+}
+footer.site-footer .information .social a {
+  display: inline-block;
+  margin: 8px;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  width: 1.5em;
+  height: 1.5em;
+}
+footer.site-footer .information .social a:hover {
+  background: #fff;
+  color: #3932de;
 }
 
 /*# sourceMappingURL=style.css.map */

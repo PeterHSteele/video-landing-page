@@ -4,21 +4,18 @@ header.site-header{
   z-index: 2;
   transition: background .2s;
   padding: 10px 0;
+  background: #262626;
 
-  .row{
-    *{
-      //vertical-align: top!important;
+  @media screen and (min-width: $large-screen-width){
+    &:not(.opaque){
+      background: transparent;
+
+      nav a{
+        background: transparent;
+      }
     }
   }
 
-  &.opaque{
-    background: #262626;
-
-    nav a{
-      background: #262626;
-    }
-  }
-  
   .logo{
     text-align: center;
     width: 100%;
@@ -34,7 +31,10 @@ header.site-header{
 
   h2{
     color: #fff;
-    font-family: "Brush Script MT", cursive;
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     display: none;
     margin: 8px 0;
 
@@ -44,7 +44,6 @@ header.site-header{
   }
 
   nav{
-    position: relative;
 
     .menu-toggle{
       background: transparent;
@@ -52,14 +51,26 @@ header.site-header{
       color: #fff;
       border: 1px solid #fff;
       border-radius: 4px;
-      font: 22px "Brush Script MT", cursive;
+      font-size: 15px;
+      text-transform: uppercase;
       display: block;
       transition: all .3s;
+      min-height: 65px;
+      //white-space: nowrap;
+
+      &.is-pressed{
+        color: #262626;
+        background: linear-gradient(to right, #fff, #cdf)
+      }
 
       &:hover,
       &:active{
         background: #ccddff;
         color: #262626;
+      }
+
+      @media all and (min-width: $medium-screen-width){
+        font-size: 18px;
       }
     }
 
@@ -70,8 +81,8 @@ header.site-header{
     }
     
     ul{
+      top: 200%;
       position: absolute;
-      //left: -9999px;
       list-style: none;
       margin: 0;
       padding: 0;
@@ -80,22 +91,18 @@ header.site-header{
       width: 100%;
       border-radius: 4px;
       box-sizing: border-box;
-      transition: .3s top;
+      transition: top .3s ease-out, opacity .3s ease-out;
+      left: 0;
+      opacity: .1;
 
-      //delete this
-      &:after{
-        display: table;
-        content: "";
-        clear: both;
+      &.hidden{
+        left: -9999px;
       }
 
       &.active{
-        
-        li{
-          top: 0;
-          opacity: 1;
-          left: auto;
-        }
+        left: 0;
+        top: 100%;
+        opacity: 1;
       }
 
       @media all and (min-width: $large-screen-width){
@@ -103,14 +110,16 @@ header.site-header{
         flex-direction: row;
         left: auto;
         border: none;
+        opacity: 1;
       }
 
       li{
-        position: relative;
-        top: 100px;
-        left: -9999px;
-        transition: all ease .4s;
-        opacity: .1;
+        //position: absolute;
+        //top: 100px;
+        //width: 100%;
+        //left: -9999px;
+        //transition: all ease .3s;
+        //opacity: .1;
 
         &:last-child a{
           border-radius: 0 0 4px 4px;
@@ -125,14 +134,14 @@ header.site-header{
         
         a{
           $hover-color: #ccddff;
-
           color: #fff;
           padding: .5em;
           text-decoration: none;
-          font-size: 16px;
+          font-size: 1.3em;
           transition: all .3s;
           position: relative;
           display: block;
+          background: #262626;
 
           &:hover,
           &:focus{
@@ -144,6 +153,7 @@ header.site-header{
           color: #262626;*/
 
           @media screen and (min-width: $large-screen-width){
+            font-size: 1em;
             background: transparent;
             color: #fff;
           }

@@ -3,6 +3,11 @@ mixin logo-link
     a.logo-link(href="./index.html")
       img.logo-image(src="../img/test-doodle.svg")
 
+mixin social-link(href, srText, icon)
+  a(href=href)
+    span.sr-only #{$srText}
+    i(class=icon)
+
 //mixin content-section(number,heading,imgsrc,imgalt,text,linkref,linktext,imgleft)
   #section${number}.col-sm-16
     article
